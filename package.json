@@ -1,0 +1,24 @@
+{
+  "name": "lee_a_roku",
+  "version": "1.0.0",
+  "description": "# Roku Flashback",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidanleee/Lee_A_Roku.git"
+  },
+  "author": "Aidan Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aidanleee/Lee_A_Roku/issues"
+  },
+  "homepage": "https://github.com/aidanleee/Lee_A_Roku#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "sass": "^1.24.5"
+  }
+}
