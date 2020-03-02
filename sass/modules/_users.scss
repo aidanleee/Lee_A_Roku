@@ -1,0 +1,29 @@
+#users-section {
+    #users-title {
+        margin-top: 30px;
+        h2 {
+            color: $text1;
+            font-size: 40px;
+            font-weight: 600;
+        }
+    }
+
+    .user-card{
+        height: 235px;
+        text-align: center;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
+        line-height: 235px;
+        margin-bottom: 15px;
+        color: $text2;
+
+    }
+    .lc {
+        padding-right: 7.5px;
+    }
+    
+    .rc {
+        padding-left: 7.5px;
+    }
+}
