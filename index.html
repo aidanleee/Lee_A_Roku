@@ -12,29 +12,27 @@
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
+    <main id="app">
     <div class="container-fluid">
         <header class="row" id="mainHead">
             <nav class="col-12" id="nav-bar">
                 <img src="images/logo.svg" alt="Logo">
-                <div id="user-emblem"><span>A</span></div>
+                <div v-on:click="openNav" id="user-emblem"><span>A</span></div>
                 <!-- slide out nav -->
                 <div class="sidenav" id="mySidenav">
-                    <a class="closebtn">&times;</a>
-                    <a href="#">Users</a>
-                    <a href="#">Settings</a>
-                    <a href="#">Admin</a>
-                    <a href="#">Logout</a>
+                    <a class="closebtn" v-on:click="closeNav">&times;</a>
+                    <router-link to="users">Users</router-link>
+                    <router-link to="admin">Admin</router-link>
+                    <router-link to="login">Logout</router-link>
                 </div>
 
             </nav>
         </header>
     </div>
-
-    <main id="app">
         <router-view/>
     </main>
 
-    <div class="container-fluid">
+   <!-- <div class="container-fluid">
         <hr>
         <footer class="row">
             <div class="col-12 col-lg-6 text-center">
@@ -52,7 +50,7 @@
             
     
         </footer>
-    </div>
+    </div>-->
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
