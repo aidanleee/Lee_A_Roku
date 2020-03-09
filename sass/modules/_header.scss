@@ -1,0 +1,65 @@
+#mainHead {
+    height: 88px;
+    background-color: #ffffff;
+    box-shadow: 0 12px 16px rgba(69, 91, 99, 0.1);
+    #nav-bar {
+        height: 88px;
+        img {
+            line-height: 88px;
+            float: left;
+            height: 26px;
+            margin-top: 31px;
+        }
+        #user-emblem {
+            text-align: center;
+            float: right;
+            border: 2.5px solid $black;
+            border-radius: 50%;
+            height: 36px;
+            width: 36px;
+            line-height: 30px;
+            margin-top: 26px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+}
+
+// Side Nav
+.sidenav {
+    height: 100%;
+    width: 0; // closed 
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: $purple;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.closebtn {
+    cursor: pointer;
+}

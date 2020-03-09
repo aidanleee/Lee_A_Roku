@@ -1,1 +1,14 @@
-// Styling below
+@font-face {
+    font-family: "SF Display";
+    font-weight: 400;
+    src: url("https://sf.abarba.me/SF-UI-Display-Regular.otf");
+  }
+
+body    {
+    background-color: $background;
+    font-family: 'SF Display';
+}
+
+.hide {
+    display: none;
+}
