@@ -19,8 +19,9 @@
                 <img src="images/logo.svg" alt="Logo">
                 <div v-on:click="openNav" id="user-emblem"><span>A</span></div>
                 <!-- slide out nav -->
-                <div class="sidenav" id="mySidenav">
-                    <a class="closebtn" v-on:click="closeNav">&times;</a>
+                <div class="sidenav" v-on:click="closeNav" id="mySidenav">
+                    <a class="closebtn">&times;</a>
+                    <router-link to="home">Home</router-link>
                     <router-link to="users">Users</router-link>
                     <router-link to="admin">Admin</router-link>
                     <router-link to="login">Logout</router-link>
