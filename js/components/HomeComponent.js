@@ -20,6 +20,10 @@ export default {
                 <h2>Movies</h2> <!-- {{ mediaType }}-->
             </div>
             <div class="col-12 scroll">
+                <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia" :src="'images/movies/' + media.movies_cover" alt="media thumb" @click="switchActiveMedia(media)" class="media-scroll">
+                
+                
+                
                 <a href="#" class="media-scroll"><img src="images/" alt=""></a>
                 <a href="#" class="media-scroll"><img src="images/" alt=""></a>
                 <a href="#" class="media-scroll"><img src="images/" alt=""></a>
@@ -46,7 +50,26 @@ export default {
 
     data() {
         return {
-            message: "This is the home page."
+            activeMediaType: "video",
+
+            currentMediaDetials: {
+                source: "ladytramp.mp4",
+            },
+
+            mediaTypes: [
+                { description: "video", name: "Movies"  },
+                { description: "audio", name: "Music" },
+                { description: "television", name: "TV" }
+            ],
+            retrievedMedia: []
         }
+    },
+
+    created: function() {
+        console.log("Home Component Live");
+    },
+
+    methods: {
+
     }
 }
