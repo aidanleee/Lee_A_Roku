@@ -1,7 +1,7 @@
 
+import UsersComponent from './components/UsersComponent.js';
 import LoginComponent from './components/LoginComponent.js';
 import HomeComponent from './components/HomeComponent.js';
-import UsersComponent from './components/UsersComponent.js';
 import GettingStartedComponent from './components/GettingStartedComponent.js';
 import AdminComponent from './components/AdminComponent.js';
 
@@ -25,6 +25,8 @@ const vm = new Vue({
     hidden: false,
 
     genericMessage: "hello from the parent",
+
+    user: [],
   },
 
   created: function() {

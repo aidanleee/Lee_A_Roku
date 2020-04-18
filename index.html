@@ -13,25 +13,37 @@
 </head>
 <body>
     <main id="app">
-    <div class="container-fluid">
-        <header class="row" id="mainHead">
-            <nav class="col-12" id="nav-bar">
-                <img src="images/logo.svg" alt="Logo">
-                <div v-on:click="openNav" id="user-emblem"><span>A</span></div>
-                <!-- slide out nav -->
-                <div class="sidenav" v-on:click="closeNav" id="mySidenav">
-                    <a class="closebtn">&times;</a>
-                    <router-link to="home">Home</router-link>
-                    <router-link to="users">Users</router-link>
-                    <router-link to="admin">Admin</router-link>
-                    <router-link to="login">Logout</router-link>
-                </div>
+        <div class="container-fluid">
+            <header class="row" id="mainHead">
+                <nav class="col-12" id="nav-bar">
+                    <img src="images/logo.svg" alt="Logo">
+                    <div v-if="authenticated" v-on:click="openNav" id="user-emblem"><span>A</span></div>
+                    <!-- slide out nav -->
+                    <div class="sidenav" v-on:click="closeNav" id="mySidenav">
+                        <a class="closebtn">&times;</a>
+                        <router-link to="home">Home</router-link>
+                        <router-link to="users">Users</router-link>
+                        <router-link to="admin">Admin</router-link>
+                        <router-link to="login">Logout</router-link>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        </div>
+    
+            <!-- first thing in component templates should be a container -->
+            <router-view @authenticated="setAuthenticated"/>	
+        </main>
 
-            </nav>
-        </header>
-    </div>
-        <router-view/>
-    </main>
+
+
+
+
+
+
+
+
+    
 
    <!-- <div class="container-fluid">
         <hr>

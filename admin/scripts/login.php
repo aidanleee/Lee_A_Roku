@@ -1,0 +1,63 @@
+<?php
+
+function login($username, $password, $ip)
+{
+    
+
+require_once('connect.php');
+  $check_exist_query = "SELECT COUNT(*) FROM tbl_users WHERE user_name = :username";
+
+  $user_set = $pdo->prepare($check_exist_query);
+  $user_set->execute(
+    array(
+      ':username' => $username
+    )
+  );
+  
+  if ($user_set->fetchColumn() > 0) {
+    $get_user_query = "SELECT * FROM tbl_users WHERE user_pass = :psw AND user_name = :username";
+    $get_user_set = $pdo->prepare($get_user_query);
+    $get_user_set->execute(
+      array(
+        ":psw" => $password,
+        ":username" => $username
+      )
+    );
+
+    while ($found_user = $get_user_set->fetch(PDO::FETCH_ASSOC)) {
+      $id = $found_user['user_id'];
+      $_SESSION['user_id'] = $id;
+      $_SESSION['user_name'] = $found_user['user_name'];      
+
+      //Update user login IP
+			$update_ip_query = 'UPDATE tbl_users SET user_ip=:ip WHERE user_id=:id';
+			$update_ip_set = $pdo->prepare($update_ip_query);
+			$update_ip_set->execute(
+				array(
+					':ip'=>$ip,
+					':id'=>$id
+				)
+      );
+      
+      $user = array();
+
+      $user['id'] = $found_user['user_id'];
+      $user['username'] = $found_user['user_name'];
+      $user['admin'] = $found_user['user_admin'];
+      $user['access'] = $found_user['user_access'];
+
+      // add any other non-sensitive details here...
+
+      return $user;
+    }
+
+    if (empty($id)){
+        $message = 'No ID';
+        return $message;
+    }
+
+  } else {
+    $message = 'No User';
+    return $message;
+  }
+}
