@@ -18,6 +18,7 @@
             $currentuser['admin'] = $user['user_admin'];
             $currentuser['access'] = $user['user_access'];
             $currentuser['finitial'] = $user['user_finitial'];
+            $currentuser['avatar'] = $user['user_avatar'];
 
             $users[] = $currentuser;
         }

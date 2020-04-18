@@ -31,6 +31,8 @@ const vm = new Vue({
 
   created: function() {
     console.log("parent is live");
+
+    
   },
 
   methods: {
@@ -45,8 +47,32 @@ const vm = new Vue({
     setAuthenticated(status, data) {
       this.authenticated = status;
       this.user = data;
+    },
+
+    logout() {
+      // delete local session
+      if (localStorage.getItem("cachedUser")) {
+        localStorage.removeItem("cachedUser");
+      }
+      // push user back to login page
+      this.$router.push({ path: "/login" });
+      this.authenticated = false;
+      
+      
     }
+
+    
   },
 
   router: router
 }).$mount("#app");
+
+router.beforeEach((to, from, next) => {
+  console.log('router guard fired!', to, from, vm.authenticated);
+
+  if (vm.authenticated == false) {
+    next("/login");
+  } else {
+    next();
+  }
+});

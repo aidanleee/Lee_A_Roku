@@ -8,31 +8,25 @@
         }
     }
 
-    .user-card{
-        height: 235px;
+    #user-profile {
         text-align: center;
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
-        line-height: 235px;
-        margin-bottom: 15px;
-        color: $text2;
+        margin-top: 50px;
+    }
 
-    }
-    .lc {
-        padding-right: 7.5px;
-    }
-    
-    .rc {
-        padding-left: 7.5px;
-    }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    #users-section {
-        div {
-            padding: 0 30px !important;
+    #user-icon {
+        background-color: $purple;
+        text-align: center;
+        margin: 0 auto;
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        cursor: pointer;
+        span {
+            font-size: 50px;
+            line-height: 72px;
+            color: white;
         }
     }
+    
 }
