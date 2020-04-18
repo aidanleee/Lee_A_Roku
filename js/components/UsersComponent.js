@@ -1,3 +1,5 @@
+import UserComponent from './UserComponent.js';
+
 export default {
     template: `
     <div class="container-fluid">
@@ -5,25 +7,38 @@ export default {
             <div class="col-12" id="users-title">
                 <h2>Users</h2>
             </div>
-            <div class="col-6 lc col-lg-3">
-                <div class="user-card"><span>Peter</span></div>
-            </div>
-            <div class="col-6 rc col-lg-3">
-                <div class="user-card"><span>Tracie</span></div>
-            </div>
-            <div class="col-6 lc col-lg-3">
-                <div class="user-card"><span>Paris</span></div>
-            </div>
-            <div class="col-6 rc col-lg-3">
-                <div class="user-card"><span>Aidan</span></div>
-            </div>
+
+            <user v-for="(user, index) in userList" :liveuser="user" :key="index"></user>
         </section>
     </div>
     `,
 
+    created: function() {
+        this.fetchAllUsers();
+    },
+
     data() {
         return {
-            message: "This is the Users page"
+            message: "This is the Users page",
+
+            userList: []
         }
+    },
+
+    methods: {
+        fetchAllUsers() {
+          let url = `./admin/scripts/users.php?allusers=true`;
+  
+          fetch(url)
+            .then(res => res.json())
+            .then(data => {this.userList = data})
+          .catch(function(error) {
+            console.error(error);
+          });
+        }
+    },
+  
+    components: {
+        user: UserComponent
     }
 }
