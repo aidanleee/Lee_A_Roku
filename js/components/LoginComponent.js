@@ -22,7 +22,36 @@ export default {
     },
 
     methods: {
-        
-    }
+        login() {
+            if (this.input.username != "" && this.input.password != "") {
+                let formData = new FormData();
 
+                formData.append("username", this.input.username);
+                formData.append("password", this.input.password);
+
+                let url = `./admin/scripts/admin_login.php`;
+
+                fetch(url, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (typeof data != "object") {
+                        console.warn(data);
+                        console.error("authentication failed, please try again");
+                        this.$emit("autherror", data);
+                    } else {
+                        this.$emit("authenticated", true, data[0]);
+                        this.$router.replace({ name: "users" });
+                    }
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            } else {
+                console.log("A username and password must be present");
+            }
+        }
+    }
 }
