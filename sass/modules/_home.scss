@@ -62,3 +62,60 @@
 .genres-scroll:first-child {
     margin-left: 8px;
 }
+
+#home-menu {
+    background-color: $black;
+    padding: 20px;
+    ul {
+        float: left;
+        list-style-type: none;
+        padding-left: 20px;
+    }
+    span{ 
+        color: $purple;
+        font-weight: bold;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+#play-bttn {
+    height: 40px;
+    width: 70px;
+    border: none;
+    border-radius: 3px;
+    background-color: $purple;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.95);
+    text-align: center;
+    color: white;
+    left: 0;
+    right: 0;
+    span {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    audio, video {
+        margin-top: 100px;
+    }
+}
+
+.show-lightbox {
+    display: block;
+    opacity: 1; 
+  }

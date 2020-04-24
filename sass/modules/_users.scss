@@ -1,32 +1,58 @@
-#users-section {
-    #users-title {
-        margin-top: 30px;
-        h2 {
-            color: $text1;
-            font-size: 40px;
-            font-weight: 600;
-        }
+.profileHeading {
+    text-align: center;
+    padding: 20px 0px 60px 0px;
+}
+
+.user-cont {
+    span {
+        text-align: center;
+    }
+    p {
+        font-size: 24px;
+    }
+}
+
+.user-icon {
+    margin: 0 auto;
+    background-color: white;
+    color: $purple;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 98px;
+}
+
+.profileIcon {
+    margin: 0 auto;
+}
+/* CHOOSE PROFILE - TABLET */
+
+@media only screen and (min-width: 768px) {
+
+    .profileIcon {
+        width: 9vw;
+        height: auto;
     }
 
-    #user-profile {
-        text-align: center;
-        margin-top: 50px;
+    #profiles h3 {
+        font-size: 24px;
     }
 
-    #user-icon {
-        background-color: $purple;
-        text-align: center;
-        margin: 0 auto;
-        height: 75px;
-        width: 75px;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        cursor: pointer;
-        span {
-            font-size: 50px;
-            line-height: 72px;
-            color: white;
-        }
+}
+
+/* CHOOSE PROFILE - DESKTOP */
+
+@media only screen and (min-width: 1328px) {
+
+    .profileIcon {
+        width: 11vw;
+        height: auto;
     }
-    
+
+    #profiles h3 {
+        font-size: 32px;
+    }
 }

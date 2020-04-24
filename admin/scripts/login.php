@@ -5,17 +5,21 @@ function login($username, $password, $ip)
     
 
 require_once('connect.php');
+  //check if username exists
   $check_exist_query = "SELECT COUNT(*) FROM tbl_users WHERE user_name = :username";
-
+  
+  // var_dump($check_exist_query);
+  // $user_set = $pdo->query($check_exist_query);
   $user_set = $pdo->prepare($check_exist_query);
   $user_set->execute(
     array(
       ':username' => $username
     )
   );
-  
+    // var_dump($user_set);exit;
   if ($user_set->fetchColumn() > 0) {
     $get_user_query = "SELECT * FROM tbl_users WHERE user_pass = :psw AND user_name = :username";
+    //var_dump($get_user_query);exit;
     $get_user_set = $pdo->prepare($get_user_query);
     $get_user_set->execute(
       array(

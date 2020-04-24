@@ -1,5 +1,3 @@
-# Lee_A_Roku
-
 # Roku Flashback 
 
 This is an audio/video application where users can stream movies. This application features a child friendly option where children can watch shows appropriate to them.

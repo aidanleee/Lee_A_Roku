@@ -2,17 +2,27 @@ export default {
     props: ['liveuser'],
 
     template: `
-    <div @click="navToUserProfile()" id="user-profile" class="col-6 col-lg-3">
-        <div id="user-icon"><span>{{ liveuser.finitial }}</span></div>
-        <span id="user-name">{{ liveuser.fname }}</span>
-    </div>
-        
-    `,
+		<div @click="navToUserProfile()" class="user-cont text-center col-6 col-md-3">
+            <div class="profileIcon">
+                <div class="user-icon">
+                    <span>{{ liveuser.finitial }}</span>
+                </div>
+                <p>{{ liveuser.fname }}</p>
+            </div>
+        </div>
+	`,
+
+    created: function() {
+        if (this.liveuser.avatar == null) {
+            this.liveuser.avatar = "temp_avatar.jpg";
+        }
+    },
 
     methods: {
-        navToUserProfile() {
-            this.$router.push({ name: "gettingstarted", params: { currentuser: this.liveuser } });
-            localStorage.setItem("cachedUser", JSON.stringify(this.liveuser));
+        navToUserProfile() {            
+            this.$router.push({ name: "adultskids", params: { currentuser: this.liveuser } });
+            // set a localstorage session object so that we don't have to log back in on page refresh or after our initial login
+            localStorage.setItem("cachedUser", JSON.stringify(this.liveuser)); 
         }
     }
 }
