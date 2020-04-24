@@ -1,24 +1,23 @@
 {
-  "name": "lee_a_roku",
+  "name": "lee_smeltzer_hw4",
   "version": "1.0.0",
-  "description": "# Roku Flashback",
+  "description": "Homework 4",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aidanleee/Lee_A_Roku.git"
+    "url": "git+https://github.com/aidanleee/Lee_Smeltzer_HW4.git"
   },
-  "author": "Aidan Lee",
+  "author": "Aidan Lee and Kyle Smeltzer",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aidanleee/Lee_A_Roku/issues"
+    "url": "https://github.com/aidanleee/Lee_Smeltzer_HW4/issues"
   },
-  "homepage": "https://github.com/aidanleee/Lee_A_Roku#readme",
+  "homepage": "https://github.com/aidanleee/Lee_Smeltzer_HW4#readme",
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
-    "sass": "^1.24.5"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2"
   }
 }

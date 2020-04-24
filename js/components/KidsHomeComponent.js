@@ -1,10 +1,21 @@
 export default {
     template: `
-    `,
+    
+     `,
+ 
+     data() {
+         return {
+             message: "hello from Vue"
+         }
+     },
 
-    data() {
-        return {
-            message: "This is the Kids page"
-        }
-    }
-}
+     created: function() {
+         console.log("kid page");
+     },
+ 
+     methods: {
+
+        
+
+     }
+ }
